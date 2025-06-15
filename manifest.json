@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Google Search Text Highlighter - Atheron Technologies",
+  "version": "1.0",
+  "description": "Streamline your search experience on Google by effortlessly highlighting the exact text you've queried. Easily identify and count the matched results directly on the search page, sparing you the need to scrutinize every detail. Enhance efficiency and reduce effort with this intuitive text-matching extension.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon128.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
